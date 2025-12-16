@@ -1,0 +1,119 @@
+/* Keyframes */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px; /* more breathing space */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap; /* allow wrapping on small screens */
+}
+
+/* Left Column */
+.leftDiv {
+    flex: 1;
+    opacity: 0;
+    animation: slideInLeft 1s ease-out forwards;
+    animation-delay: 0.3s;
+    text-align: left;
+}
+
+.leftDiv h1 {
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 5vw, 3rem); /* responsive font size */
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.leftDiv p {
+    line-height: 1.6;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: #cccccc;
+}
+
+/* Right Column */
+.rightDiv {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    animation: slideInRight 1s ease-out forwards;
+    animation-delay: 0.6s; /* slightly after left column */
+}
+
+.rightDiv img {
+    width: 100%;
+    max-width: 450px;
+    height: 300px;
+    border-radius: 15px; /* slightly rounder */
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rightDiv img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.container2 {
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 60px 20px;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .leftDiv, .rightDiv {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .leftDiv h1 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        text-align: center;
+    }
+
+    .leftDiv p {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        text-align: center;
+    }
+
+    .rightDiv img {
+        max-width: 90%;
+    }
+}

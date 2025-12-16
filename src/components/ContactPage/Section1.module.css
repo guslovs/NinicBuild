@@ -1,0 +1,46 @@
+.container {
+    width: 100%;
+    max-width: 1200px;      
+    margin: 0 auto;         
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;              
+    flex-wrap: nowrap; 
+    color: white;  
+}
+
+.leftDiv {
+    flex: 1;
+}
+
+.leftDiv h1 {
+    font-size: 3rem;
+}
+
+.rightDiv {
+    flex: 1;
+    display: flex;
+    justify-content: center;   
+}
+
+.rightDiv p {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;       
+        text-align: center;
+    }
+
+    .leftDiv,
+    .rightDiv {
+        width: 100%;
+        display: flex;
+        flex-direction: column;   
+        align-items: center;       
+    }
+}
