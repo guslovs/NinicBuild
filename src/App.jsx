@@ -7,9 +7,7 @@ import Contact from './components/ContactPage/Contact';
 import Projects from './components/ProjectsPage/Projects'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-function App() {
-
-  const router = createBrowserRouter([
+const router = createBrowserRouter([
     { path: '/',
       element: <Navbar />,
       children: [
@@ -21,6 +19,7 @@ function App() {
       ]
     }
   ])
+function App() {
 
   return (
     <>
